@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ 
+  subsets: ["latin"], 
+  weight: ['400', '500', '700', '900'], 
+  style: ['italic', 'normal'],
+  variable: "--font-poppins" 
+});
 
 export const metadata: Metadata = {
   title: "Harit Hotel Management",
-  description: "Welcome to the best hotel ",
+  description: "Welcome to the best hotel facility",
 };
 
 export default function RootLayout({
@@ -16,7 +21,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={poppins.className}>
+        <main className="font-normal">
+          {/* ?Header */}
+          {children}
+          {/* ?Header */}
+        </main>
+      </body>
     </html>
   );
 }
