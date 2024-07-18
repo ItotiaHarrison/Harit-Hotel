@@ -43,8 +43,7 @@ const Auth = () => {
           </h1>
           <p>OR</p>
           <span className="inline-flex items-center">
-            <AiFillGithub className="mr-3 text-4xl cursor-pointer text-black dark:text-white" />{" "}
-            |
+            <AiFillGithub className="mr-3 text-4xl cursor-pointer text-black dark:text-white" /> |
             <FcGoogle className="ml-3 text-4xl cursor-pointer" />
           </span>
         </div>
