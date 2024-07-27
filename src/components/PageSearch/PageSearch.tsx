@@ -6,7 +6,6 @@ const PageSearch = () => {
     const [roomTypeFilter, setRoomTypeFilter] = useState('');
     const [searchQuery, setSearchQuery] = useState('');
 
-
   return (
     <Search
     roomTypeFilter={roomTypeFilter}
