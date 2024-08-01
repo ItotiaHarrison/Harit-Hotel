@@ -1,9 +1,9 @@
 import { defineField } from "sanity";
 
 const roomTypes = [
-    {title: "Basic", value: "basic"},
-    {title: "Luxury", value: "luxury"},
-    {title: "Suite", value: "suite"},
+    { title: "Basic", value: "basic" },
+    { title: "Luxury", value: "luxury" },
+    { title: "Suite", value: "suite" },
 ]
 
 const hotelRoom = {
@@ -15,7 +15,7 @@ const hotelRoom = {
             name: 'name',
             title: 'Name',
             type: 'string',
-            validation: Rule => 
+            validation: Rule =>
                 Rule.required().max(50).error('Maximum 50 characters'),
         }),
         defineField({
@@ -46,16 +46,17 @@ const hotelRoom = {
             validation: Rule => Rule.min(0),
         }),
         defineField({
-            name: 'image',
-            title: 'Image',
+            name: 'images',
+            title: 'Images',
             type: 'array',
-            of: [{type: 'object', 
+            of: [{
+                type: 'object',
                 fields: [
-                    {name: 'url', type: 'url', title: 'URL'},
-                    {name: 'file', type: 'file', title: 'FILE'}
+                    { name: 'url', type: 'url', title: 'URL' },
+                    { name: 'file', type: 'file', title: 'FILE' }
                 ],
             },
-        ],
+            ],
             validation: Rule => Rule.required().min(3).error('Minimum of 3 images required'),
         }),
         defineField({
@@ -63,8 +64,8 @@ const hotelRoom = {
             title: 'Cover Image',
             type: 'object',
             fields: [
-                {name: 'url', type: 'url', title: 'URL'},
-                {name: 'file', type: 'file', title: 'file'},
+                { name: 'url', type: 'url', title: 'URL' },
+                { name: 'file', type: 'file', title: 'file' },
             ],
             validation: Rule => Rule.required().error('Cover Image is required'),
         }),
@@ -104,8 +105,8 @@ const hotelRoom = {
                 {
                     type: 'object',
                     fields: [
-                        {name: 'icon', title: 'Icon', type: 'string'},
-                        {name: 'amenity', title: 'Amenity', type: 'string'},
+                        { name: 'icon', title: 'Icon', type: 'string' },
+                        { name: 'amenity', title: 'Amenity', type: 'string' },
                     ],
                 },
             ],
@@ -126,7 +127,7 @@ const hotelRoom = {
             name: 'reviews',
             title: 'Reviews',
             type: 'array',
-            of: [{type: 'review'}]
+            of: [{ type: 'review' }]
         }),
     ],
 };
