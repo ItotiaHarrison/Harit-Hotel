@@ -16,6 +16,8 @@ import Table from "@/components/Table/Table";
 
 import toast from "react-hot-toast";
 import Chart from "@/components/Chart/Chart";
+import RatingModal from "@/components/RatingModal/RatingModal";
+import BackDrop from "@/components/BackDrop/BackDrop";
 
 const UserDetails = (props: { params: { id: string } }) => {
   const {
@@ -199,6 +201,18 @@ const UserDetails = (props: { params: { id: string } }) => {
           )}
         </div>
       </div>
+
+      <RatingModal
+        isOpen={isRatingVisible}
+        ratingValue={ratingValue}
+        setRatingValue={setRatingValue}
+        ratingText={ratingText}
+        setRatingText={setRatingText}
+        isSubmittingReview={isSubmittingReview}
+        reviewSubmitHandler={reviewSubmitHandler}
+        toggleRatingModal={toggleRatingModal}
+      />
+      <BackDrop isOpen={isRatingVisible} />
     </div>
   );
 };
