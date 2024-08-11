@@ -15,6 +15,7 @@ import { GiMoneyStack } from "react-icons/gi";
 import Table from "@/components/Table/Table";
 
 import toast from "react-hot-toast";
+import Chart from "@/components/Chart/Chart";
 
 const UserDetails = (props: { params: { id: string } }) => {
   const {
@@ -191,11 +192,13 @@ const UserDetails = (props: { params: { id: string } }) => {
             <></>
           )}
 
-         
+          {currentNav === "amount" ? (
+            userBookings && <Chart userBookings={userBookings} />
+          ) : (
+            <></>
+          )}
         </div>
       </div>
-
-      
     </div>
   );
 };
