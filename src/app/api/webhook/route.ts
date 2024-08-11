@@ -30,7 +30,7 @@ export async function POST(req: Request, res: Response) {
       
       const {
         // @ts-ignore
-        metadata: {
+        Metadata: {
           adults,
           checkinDate,
           checkoutDate,
@@ -55,7 +55,7 @@ export async function POST(req: Request, res: Response) {
         user,
       });
 
-      //   Update hotel Room
+      //Update hotel Room
       await updateHotelRoom(hotelRoom);
 
       return NextResponse.json('Booking successful', {
