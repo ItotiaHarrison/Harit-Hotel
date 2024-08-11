@@ -11,4 +11,10 @@ export type UpdateReviewDto = {
     userId: string;
   };
   
- 
+  export type Review = {
+    text: string;
+    user: { name: string };
+    userRating: number;
+    _createdAt: Date;
+    _id: string;
+  };
